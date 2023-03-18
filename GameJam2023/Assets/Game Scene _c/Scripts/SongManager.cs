@@ -7,7 +7,7 @@ using UnityEditor.Search;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
-{
+{ 
     private enum NoteStats
     {
         PERFECT,
@@ -58,7 +58,10 @@ public class SongManager : MonoBehaviour
         GameObject newNote = Instantiate(notePrefab);
         newNote.transform.SetParent(noteParent);
         newNote.GetComponent<RectTransform>().localPosition = notePrefab.GetComponent<RectTransform>().localPosition;
-        newNote.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+
+        newNote.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
+        //newNote.GetComponent<Note>().key = _notes[nextNoteIndex].Keys;
+        newNote.GetComponent<Note>().AdjustPos();
     }
 
     private bool IsRightKeyDown(List<string> keys)
