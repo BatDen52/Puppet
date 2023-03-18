@@ -8,8 +8,6 @@ using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
-    public IReadOnlyCollection<string> AllKeys = new List<string> { "q", "w", "e", "r", "p", "o", "i", "u" };
-
     public float bit;
     public string key;
     public Transform targetPos;
@@ -18,23 +16,41 @@ public class Note : MonoBehaviour
     public Image keyImage;
     public Sprite[] keys;
     public Color32[] colors;
+    public float speed = 4;
 
-    private float tempo;
     private bool inTriggerArea = false;
-    private bool isAlredyExit = false;
 
     public event Action<float> Missed;
     public event Action<float> Hiting;
 
     private void Start()
     {
-        tempo = (transform.position.x - targetPos.position.x) / (8 * (60f / 126)) / 60;
+        targetPos = GameObject.FindGameObjectWithTag("bit_trigger").GetComponent<Transform>();
+        StartCoroutine(DoMove(speed, Vector2.zero));
+    }
+
+    private IEnumerator DoMove(float time, Vector2 targetPosition)
+    {
+        var rectTransform = GetComponent<RectTransform>();
+        var targetPosX = targetPos.localPosition.x;
+        Vector2 startPosition = rectTransform.anchoredPosition;
+
+        targetPosX = startPosition.x + (targetPosX - startPosition.x) * 1.15f;
+        time *= 1.2f;
+
+        double startTime = AudioSettings.dspTime;
+        float fraction = 0f;
+
+        while (fraction < 1f)
+        {
+            fraction = Mathf.Clamp01((float)((AudioSettings.dspTime - startTime) / time));
+            rectTransform.anchoredPosition = Vector2.Lerp(startPosition, new Vector2(targetPosX, startPosition.y), fraction);
+            yield return null;
+        }
     }
 
     private void Update()
     {
-        transform.position -= new Vector3(tempo * Time.deltaTime, 0f, 0f);
-
         if (bit == SongManager.curretnBit)
             if (Input.GetKeyDown(key))
             {
@@ -87,7 +103,7 @@ public class Note : MonoBehaviour
 
         GetComponent<RectTransform>().localPosition = new Vector3(GetComponent<RectTransform>().localPosition.x,
                     GetComponent<RectTransform>().localPosition.y - k * 50f, 0);
-        tempo = (transform.position.x - targetPos.position.x) / (8 * (60f / 126)) / 60;
+        //speed = (transform.position.x - targetPos.position.x) / (8 * (60f / 126)) / 60;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -104,7 +120,6 @@ public class Note : MonoBehaviour
         {
             isActive = false;
             inTriggerArea = false;
-            isAlredyExit = true;
             Missed?.Invoke(bit);
         }
     }
@@ -121,10 +136,5 @@ public class Note : MonoBehaviour
         isActive = false;
         Missed?.Invoke(bit);
         Debug.Log("Miss");
-    }
-
-    private bool IsRightKeyDown(List<string> keys)
-    {
-        return AllKeys.All(i => Input.GetKey(i) && keys.Contains(i));
     }
 }

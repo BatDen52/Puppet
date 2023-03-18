@@ -21,6 +21,8 @@ public class SongManager : MonoBehaviour
     public int nextNoteIndex = 0;
     public GameObject notePrefab;
     public Transform noteParent;
+    public float speed;
+    public Transform targetPos;
 
     private double currentPos; //в секундах
     private double dpsTimePlayed; //прошло времени с начала композиции
@@ -38,6 +40,9 @@ public class SongManager : MonoBehaviour
         songToPlay.Play();
         _noteRows.Clear();
         _notes = JsonLoader.GetNotes().ToArray();
+
+        targetPos = GameObject.FindGameObjectWithTag("bit_trigger").GetComponent<Transform>();
+        speed = beatsShownInAdvance;
     }
 
     private void Update()
@@ -68,6 +73,8 @@ public class SongManager : MonoBehaviour
         newNote.AdjustPos();
         newNote.Missed += OnMissed;
         newNote.Hiting += OnHit;
+
+        newNote.speed = speed; 
 
         if (_noteRows.Count == 0 || _noteRows.ContainsKey(bit) == false)
         {
@@ -106,14 +113,10 @@ public class SongManager : MonoBehaviour
                     
                 }
 
-
                 _noteRows.Remove(bit);
 
                 Debug.Log("AllHit");
             }
-            //вызывается метод отыгрывания анимации 
-            //animManager.SetAnim();
-
         }
     }
 }
