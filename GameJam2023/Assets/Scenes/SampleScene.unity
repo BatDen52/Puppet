@@ -459,17 +459,8 @@ MonoBehaviour:
   songToPlay: {fileID: 2079106508}
   beatsShownInAdvance: 0
   bpm: 126
-  notes:
-  - bit: 9
-    key: 0
-  - bit: 11
-    key: 0
-  - bit: 13
-    key: 0
-  - bit: 15
-    key: 0
   nextNoteIndex: 0
-  notePrefab: {fileID: 280985340881787688, guid: 8a7ae215b7a7da94eb53522aba6a1ba2, type: 3}
+  notePrefab: {fileID: 280985340881787688, guid: ac240f88e5f1fde418545950cf36186e, type: 3}
   noteParent: {fileID: 1420120845}
 --- !u!4 &1455556092
 Transform:

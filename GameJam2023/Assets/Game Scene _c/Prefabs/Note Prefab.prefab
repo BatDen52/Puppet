@@ -48,12 +48,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 280985340881787688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 689017e55b4556747ac6bc1c818ba7b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 318bf6bd89306ec42baec180a3fe1c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 126
-  tempo: 0
+  bpm: 0
   targetPos: {fileID: 454466486898071694, guid: 8564d78bcd77e1442ba21c9bbac0d4e1, type: 3}
+  key: 0
+  extraCollider: {fileID: 0}
 --- !u!1 &2490661919705423668
 GameObject:
   m_ObjectHideFlags: 0
