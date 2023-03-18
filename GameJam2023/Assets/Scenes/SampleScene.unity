@@ -775,10 +775,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animations:
+  - animator: {fileID: 1376984615}
+    animation: RightLegMove
   - animator: {fileID: 768181147}
     animation: LeftArmMove
-  - animator: {fileID: 768181147}
-    animation: LeftArmDrop
 --- !u!114 &1132508905
 MonoBehaviour:
   m_ObjectHideFlags: 0
