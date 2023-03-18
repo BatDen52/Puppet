@@ -8,12 +8,12 @@ public class JsonLoader
     [Serializable]
     class NoteItemData
     {
-        public List<NoteItemData> Data;
+        public List<NoteItem> Data;
     }
 
     public static List<NoteItem> GetNotes()
     {
         NoteItemData itemData = JsonUtility.FromJson<NoteItemData>(Resources.Load<TextAsset>("notes").text);
-        return null;
+        return itemData.Data;
     }
 }
