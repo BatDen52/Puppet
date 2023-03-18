@@ -7,7 +7,9 @@ using UnityEditor.Search;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
-{ 
+{
+    public IReadOnlyCollection<string> AllKeys = new List<string> { "Q", "W", "E", "R","P", "O","I", "U"};
+
     private enum NoteStats
     {
         PERFECT,
@@ -66,6 +68,6 @@ public class SongManager : MonoBehaviour
 
     private bool IsRightKeyDown(List<string> keys)
     {
-        return keys.All(i => Input.GetKey(i));
+        return AllKeys.All(i => Input.GetKey(i) && keys.Contains(i));
     }
 }
