@@ -1,18 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PuppetAnimManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public struct AnimData
     {
-        
+        public Animator animator;
+        public string animation;
+    }
+    [SerializeField] AnimData[] animations;
+
+    public void SetAnim(int animIndex)
+    {
+        animations[animIndex].animator.Play(animations[animIndex].animation);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Q)) 
+        {
+            SetAnim(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            SetAnim(1);
+        }
     }
+
 }
