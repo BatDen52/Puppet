@@ -33,6 +33,7 @@ public class SongManager : MonoBehaviour
 
     private void Start()
     {
+        animManager = FindObjectOfType<PuppetAnimManager>();
         dpsTimePlayed = AudioSettings.dspTime;
         songToPlay.Play();
         _noteRows.Clear();
@@ -99,13 +100,20 @@ public class SongManager : MonoBehaviour
             if (_noteRows[bit].All(i => i.isActive))
             {
                 foreach (var note in _noteRows[bit])
+                {
+                    animManager.SetAnim(note.key, false);
                     Destroy(note.gameObject);
+                    
+                }
+
 
                 _noteRows.Remove(bit);
 
                 Debug.Log("AllHit");
             }
             //вызывается метод отыгрывания анимации 
+            //animManager.SetAnim();
+
         }
     }
 }
