@@ -23,11 +23,14 @@ public class SongManager : MonoBehaviour
     public int beatsShownInAdvance;
     float currentPos; //в секундах
     float currentPos_beats; //в ударах
-    float secPerBeat; 
+    float secPerBeat;
     float dpsTimePlayed; //прошло времени с начала композиции
     public float bpm; //ударов в минуту
     public note[] notes;
     public int nextNoteIndex = 0;
+
+    public GameObject notePrefab;
+    public Transform noteParent;
 
     private void Start()
     {
@@ -39,10 +42,10 @@ public class SongManager : MonoBehaviour
     private void Update()
     {
         currentPos = (float)AudioSettings.dspTime - dpsTimePlayed;
-        currentPos_beats = currentPos/ secPerBeat;
-        if (nextNoteIndex < notes.Length && notes[nextNoteIndex].bit < currentPos_beats + beatsShownInAdvance)
+        currentPos_beats = currentPos / secPerBeat;
+        if (nextNoteIndex < notes.Length && notes[nextNoteIndex].bit-8 < currentPos_beats + beatsShownInAdvance)
         {
-            //SpawnNote();
+            SpawnNote();
             //(KeyCode)Enum.Parse(typeof(KeyCode), notes[nextNoteIndex].key))
             if (Input.GetKey(KeyCode.W))
             {
@@ -52,9 +55,12 @@ public class SongManager : MonoBehaviour
         }
     }
 
-    /*public NoteStats CheckNote()
+    public void SpawnNote()
     {
-        if()
-    }*/
+        GameObject newNote = Instantiate(notePrefab);
+        newNote.transform.SetParent(noteParent);
+        newNote.GetComponent<RectTransform>().localPosition = notePrefab.GetComponent<RectTransform>().localPosition;
+        newNote.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
+    }
 
 }
