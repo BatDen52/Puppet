@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class SongManager : MonoBehaviour
 {
-    public IReadOnlyCollection<string> AllKeys = new List<string> { "Q", "W", "E", "R","P", "O","I", "U"};
+    public IReadOnlyCollection<string> AllKeys = new List<string> { "q", "w", "e", "r", "p", "o", "i", "u" };
 
     private enum NoteStats
     {
@@ -19,10 +19,10 @@ public class SongManager : MonoBehaviour
 
     public AudioSource songToPlay;
     public int beatsShownInAdvance;
-    float currentPos; //в секундах
-    float currentPos_beats; //в ударах
+    double currentPos; //в секундах
+    double currentPosBeats; //в ударах
     float secPerBeat;
-    float dpsTimePlayed; //прошло времени с начала композиции
+    double dpsTimePlayed; //прошло времени с начала композиции
     public float bpm; //ударов в минуту
     public int nextNoteIndex = 0;
 
@@ -34,35 +34,38 @@ public class SongManager : MonoBehaviour
     private void Start()
     {
         secPerBeat = 60f / bpm;
-        dpsTimePlayed = (float)AudioSettings.dspTime;
+        dpsTimePlayed = AudioSettings.dspTime;
         songToPlay.Play();
         _notes = JsonLoader.GetNotes().ToArray();
     }
 
     private void Update()
     {
-        currentPos = (float)AudioSettings.dspTime - dpsTimePlayed;
-        currentPos_beats = currentPos / secPerBeat;
-        if (nextNoteIndex < _notes.Length && _notes[nextNoteIndex].Bit - 8 < currentPos_beats + beatsShownInAdvance)
+        currentPos = AudioSettings.dspTime - dpsTimePlayed;
+        currentPosBeats = currentPos / secPerBeat;
+      
+        if (nextNoteIndex < _notes.Length && _notes[nextNoteIndex].Bit /*- 8*/ < currentPosBeats + beatsShownInAdvance)
         {
-            SpawnNote();
-            //(KeyCode)Enum.Parse(typeof(KeyCode), notes[nextNoteIndex].key))
+            foreach (string key in _notes[nextNoteIndex].Keys)
+                SpawnNote(key);
+
             if (IsRightKeyDown(_notes[nextNoteIndex].Keys))
             {
                 print("да");
             }
+
             nextNoteIndex++;
         }
     }
 
-    public void SpawnNote()
+    public void SpawnNote(string key)
     {
         GameObject newNote = Instantiate(notePrefab);
         newNote.transform.SetParent(noteParent);
         newNote.GetComponent<RectTransform>().localPosition = notePrefab.GetComponent<RectTransform>().localPosition;
 
-        newNote.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
-        //newNote.GetComponent<Note>().key = _notes[nextNoteIndex].Keys;
+        newNote.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        newNote.GetComponent<Note>().key = key;
         newNote.GetComponent<Note>().AdjustPos();
     }
 

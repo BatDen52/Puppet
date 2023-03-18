@@ -8,13 +8,13 @@ public class Note : MonoBehaviour
     public float bpm;
     private float tempo;
     public Transform targetPos;
-    public KeyCode key;
+    public string key;
     private bool inTriggerArea = false;
     [SerializeField] CircleCollider2D extraCollider;
     private void Start()
     {
-        tempo = (transform.position.x-targetPos.position.x) / (8 * (60f / 126))/60;
-        print(tempo);
+        tempo = (transform.position.x - targetPos.position.x) / (8 * (60f / 126)) / 60;
+        //print(tempo);
     }
     void Update()
     {
@@ -37,24 +37,24 @@ public class Note : MonoBehaviour
         int k = 0;
         switch (key)
         {
-            case KeyCode.Q:
+            case "q":
                 k = 0;
                 break;
-            case KeyCode.W:
+            case "w":
                 k = 1;
                 break;
-            case KeyCode.E:
+            case "e":
                 k = 2;
                 break;
-            case KeyCode.R:
+            case "r":
                 k = 3;
                 break;
         }
-        Debug.Log(k);
+        //Debug.Log(k);
         GetComponent<RectTransform>().localPosition = new Vector3(GetComponent<RectTransform>().localPosition.x,
                     GetComponent<RectTransform>().localPosition.y - k * 50f, 0);
         tempo = (transform.position.x - targetPos.position.x) / (8 * (60f / 126)) / 60;
-        print(tempo);
+        //print(tempo);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
