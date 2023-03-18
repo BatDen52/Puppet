@@ -13,22 +13,22 @@ public class PuppetAnimManager : MonoBehaviour
     }
     [SerializeField] AnimData[] animations;
 
-    public void SetAnim(int animIndex)
-    {
-        animations[animIndex].animator.Play(animations[animIndex].animation);
-    }
 
+    private void SetAnim(int index)
+    {
+        animations[index].animator.Play(animations[index].animation);
+    }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)) 
+        /*if(Input.GetKeyDown(KeyCode.Q)) 
         {
             SetAnim(0);
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
             SetAnim(1);
-        }
+        }*/
     }
 
 }
