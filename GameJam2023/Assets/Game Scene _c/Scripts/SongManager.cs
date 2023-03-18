@@ -29,6 +29,8 @@ public class SongManager : MonoBehaviour
 
     public static float curretnBit = -1;
 
+    private PuppetAnimManager animManager;
+
     private void Start()
     {
         dpsTimePlayed = AudioSettings.dspTime;
@@ -103,6 +105,7 @@ public class SongManager : MonoBehaviour
 
                 Debug.Log("AllHit");
             }
+            //вызывается метод отыгрывания анимации 
         }
     }
 }

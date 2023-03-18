@@ -24,7 +24,7 @@ public class PuppetAnimManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)) 
+        /*if(Input.GetKeyDown(KeyCode.Q)) 
         {
             SetAnim(8);
         }
@@ -43,7 +43,7 @@ public class PuppetAnimManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.T))
         {
             SetAnim(0);
-        }
+        }*/
     }
 
 }
