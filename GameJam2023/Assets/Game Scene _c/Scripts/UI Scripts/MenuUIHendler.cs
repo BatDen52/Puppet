@@ -12,4 +12,25 @@ public class MenuUIHendler : MonoBehaviour
     {
 
     }
+
+    public void ShowNextSong()
+    {
+
+    }
+
+    public void ShowPreviouseSong()
+    {
+
+    }
+
+    public void SetSong()
+    {
+
+    }
+
+    public void BackToMenu()
+    {
+
+    }
+
 }
