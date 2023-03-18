@@ -16,8 +16,26 @@ public class PuppetAnimManager : MonoBehaviour
     [SerializeField] AnimData[] animations;
 
 
-    private void SetAnim(int index)
+    public void SetAnim(string key, bool Break)
     {
+        Debug.Log("Активация анимации");
+        int index = 0;
+        switch (key)
+        {
+            case "q" or "p":
+                index = 2;
+                break;
+            case "w" or "o":
+                index = 4;
+                break;
+            case "e" or "i":
+                index = 5;
+                break;
+            case "r" or "u":
+                index = 7;
+                break;
+        }
+        
         animations[index].threadAnimator.Play(animations[index].threadAnimation);
         animations[index].animator.Play(animations[index].animation);
     }
