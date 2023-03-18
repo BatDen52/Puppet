@@ -18,7 +18,6 @@ public class PuppetAnimManager : MonoBehaviour
 
     public void SetAnim(string key, bool Break)
     {
-        Debug.Log("Активация анимации");
         int index = 0;
         switch (key)
         {
