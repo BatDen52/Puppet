@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Burst;
 using UnityEditor.Search;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class SongManager : MonoBehaviour
         NORAML,
         MISTAKE
     }
-    
+
     public AudioSource songToPlay;
     public int beatsShownInAdvance;
     float currentPos; //в секундах
@@ -40,11 +41,11 @@ public class SongManager : MonoBehaviour
     {
         currentPos = (float)AudioSettings.dspTime - dpsTimePlayed;
         currentPos_beats = currentPos / secPerBeat;
-        if (nextNoteIndex < _notes.Length && _notes[nextNoteIndex].Bit-8 < currentPos_beats + beatsShownInAdvance)
+        if (nextNoteIndex < _notes.Length && _notes[nextNoteIndex].Bit - 8 < currentPos_beats + beatsShownInAdvance)
         {
             SpawnNote();
             //(KeyCode)Enum.Parse(typeof(KeyCode), notes[nextNoteIndex].key))
-            if (Input.GetKey(KeyCode.W))
+            if (IsRightKeyDown(_notes[nextNoteIndex].Keys))
             {
                 print("да");
             }
@@ -57,7 +58,11 @@ public class SongManager : MonoBehaviour
         GameObject newNote = Instantiate(notePrefab);
         newNote.transform.SetParent(noteParent);
         newNote.GetComponent<RectTransform>().localPosition = notePrefab.GetComponent<RectTransform>().localPosition;
-        newNote.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
+        newNote.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
     }
 
+    private bool IsRightKeyDown(List<string> keys)
+    {
+        return keys.All(i => Input.GetKey(i));
+    }
 }
