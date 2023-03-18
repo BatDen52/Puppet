@@ -3,7 +3,7 @@ guid: 16a1a5838b5d24a4796fcf24abe05765
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -24,7 +24,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +46,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16.7
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,7 +62,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -82,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +104,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +116,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -2238,108 +2248,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      UISheet_0: -405544973
-      UISheet_57: -1897745872
-      UISheet_40: 1285859665
-      UISheet_41: 529291454
-      UISheet_22: 1170426518
-      UISheet_17: -905357842
-      UISheet_69: -2109964940
-      UISheet_38: -1368044077
-      UISheet_80: -1871175744
-      UISheet_93: 65919517
-      UISheet_66: 827436336
-      UISheet_2: 478997210
-      UISheet_37: -753897769
-      UISheet_70: 1826910632
-      UISheet_100: 1992332657
-      UISheet_79: 1038413150
-      UISheet_97: -90288355
-      UISheet_60: -1830253189
-      UISheet_9: -735711170
-      UISheet_12: -443288299
-      UISheet_59: -289406811
-      UISheet_26: -721945280
-      UISheet_53: -361376958
-      UISheet_11: 1563229371
-      UISheet_45: -710301846
-      UISheet_58: -1832294150
-      UISheet_77: -158331247
-      UISheet_61: 1692835988
-      UISheet_47: -560387125
-      UISheet_89: 1426415774
-      UISheet_18: 45302143
-      UISheet_91: 2138309152
-      UISheet_39: 1118172237
-      UISheet_46: -703610586
-      UISheet_82: 675703670
-      UISheet_15: -1567710458
-      UISheet_27: -75184251
-      UISheet_34: -2043171592
-      UISheet_86: -89614661
-      UISheet_14: -1559817565
-      UISheet_23: -31378257
-      UISheet_36: -1996856192
-      UISheet_85: -180706908
-      UISheet_63: -2072035782
-      UISheet_5: -1670760447
-      UISheet_49: 1940027786
-      UISheet_87: 760648651
-      UISheet_68: -9081718
-      UISheet_24: -1659738980
-      UISheet_28: 1828457185
-      UISheet_31: -2009470262
-      UISheet_6: -1911951923
-      UISheet_81: -1754865871
-      UISheet_64: 1319917291
-      UISheet_62: -733954431
-      UISheet_8: 132624179
-      UISheet_94: -938186415
-      UISheet_96: -1205850921
-      UISheet_52: -1234721861
-      UISheet_10: -728879571
-      UISheet_72: 1859779409
-      UISheet_50: 1429658723
-      UISheet_73: -1442588400
-      UISheet_75: 1976629963
-      UISheet_99: -955539093
-      UISheet_21: -1671123047
-      UISheet_33: -520172824
-      UISheet_88: -591342846
-      UISheet_42: 523774486
-      UISheet_71: 1553480786
-      UISheet_92: 471803862
-      UISheet_44: -1061501238
-      UISheet_78: -27818976
-      UISheet_95: -1926239199
-      UISheet_7: -1239839669
-      UISheet_48: 1494771186
-      UISheet_29: -1200227572
-      UISheet_30: 93225733
-      UISheet_74: -1023604653
-      UISheet_19: 384108221
-      UISheet_83: 781970656
-      UISheet_43: 420409116
-      UISheet_35: -848280601
-      UISheet_51: 1498980005
-      UISheet_54: -2067970687
-      UISheet_98: 1903460545
-      UISheet_3: 1094519194
-      UISheet_20: -1292532647
-      UISheet_65: -1963711261
-      UISheet_56: 822988255
-      UISheet_67: -1740142213
-      UISheet_32: 139127379
-      UISheet_13: 1116944437
-      UISheet_4: -2083143106
-      UISheet_25: -591770736
-      UISheet_90: -1032863400
-      UISheet_55: -244983004
-      UISheet_16: -793157610
-      UISheet_84: -1480782946
-      UISheet_76: 563517120
-      UISheet_1: 6410975
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

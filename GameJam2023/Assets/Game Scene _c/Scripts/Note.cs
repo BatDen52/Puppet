@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class Note : MonoBehaviour
     public string key;
     public Transform targetPos;
     public bool isActive = false;
+    public Image backgroundImage;
+    public Image keyImage;
+    public Sprite[] keys;
+    public Color32[] colors;
 
     private float tempo;
     private bool inTriggerArea = false;
@@ -60,18 +65,25 @@ public class Note : MonoBehaviour
         switch (key)
         {
             case "q":
+            case "p":
                 k = 0;
                 break;
             case "w":
+            case "o":
                 k = 1;
                 break;
             case "e":
+            case "i":
                 k = 2;
                 break;
             case "r":
+            case "u":
                 k = 3;
                 break;
         }
+
+        backgroundImage.color = colors[k];
+        keyImage.sprite = keys[k];
 
         GetComponent<RectTransform>().localPosition = new Vector3(GetComponent<RectTransform>().localPosition.x,
                     GetComponent<RectTransform>().localPosition.y - k * 50f, 0);
