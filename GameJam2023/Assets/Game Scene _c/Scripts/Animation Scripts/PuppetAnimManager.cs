@@ -22,20 +22,24 @@ public class PuppetAnimManager : MonoBehaviour
         int index = 0;
         switch (key)
         {
-            case "q" or "p":
+            case "q":
+            case "p":
                 index = 2;
                 break;
-            case "w" or "o":
+            case "w":
+            case "o":
                 index = 4;
                 break;
-            case "e" or "i":
+            case "e":
+            case "i":
                 index = 5;
                 break;
-            case "r" or "u":
+            case "r":
+            case "u":
                 index = 7;
                 break;
         }
-        
+
         animations[index].threadAnimator.Play(animations[index].threadAnimation);
         animations[index].animator.Play(animations[index].animation);
     }
