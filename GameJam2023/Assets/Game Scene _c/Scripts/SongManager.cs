@@ -6,7 +6,7 @@ using UnityEditor.Search;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
-{
+{ 
     [System.Serializable]
     public struct note
     {
@@ -61,6 +61,8 @@ public class SongManager : MonoBehaviour
         newNote.transform.SetParent(noteParent);
         newNote.GetComponent<RectTransform>().localPosition = notePrefab.GetComponent<RectTransform>().localPosition;
         newNote.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
+        newNote.GetComponent<Note>().key = notes[nextNoteIndex].key;
+        newNote.GetComponent<Note>().AdjustPos();
     }
 
 }
