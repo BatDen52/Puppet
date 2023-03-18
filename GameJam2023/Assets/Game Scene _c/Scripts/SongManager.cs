@@ -7,7 +7,13 @@ using UnityEditor.Search;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
-{ 
+{
+    [System.Serializable]
+    public struct note
+    {
+        public float bit;
+        public KeyCode key;
+    }
     private enum NoteStats
     {
         PERFECT,
@@ -60,7 +66,6 @@ public class SongManager : MonoBehaviour
         newNote.GetComponent<RectTransform>().localPosition = notePrefab.GetComponent<RectTransform>().localPosition;
 
         newNote.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
-        //newNote.GetComponent<Note>().key = _notes[nextNoteIndex].Keys;
         newNote.GetComponent<Note>().AdjustPos();
     }
 
