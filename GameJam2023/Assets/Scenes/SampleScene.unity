@@ -412,6 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491451781}
   - component: {fileID: 491451783}
+  - component: {fileID: 491451784}
   m_Layer: 0
   m_Name: GameObject (3)
   m_TagString: Untagged
@@ -480,12 +481,32 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.9880238, y: 5.9880238}
+  m_Size: {x: 5.9880238, y: 8.982036}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &491451784
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491451780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f984c6a65fe4f348bf94c90fb481282, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +665,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 942737657, guid: 2ffa577ed66cf4c41b0a86fc39d2b250, type: 3}
+  m_Sprite: {fileID: -1657673212, guid: 2ffa577ed66cf4c41b0a86fc39d2b250, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -685,6 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 717384627}
   - component: {fileID: 717384629}
+  - component: {fileID: 717384630}
   m_Layer: 0
   m_Name: GameObject (2)
   m_TagString: Untagged
@@ -748,7 +770,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1379002889, guid: 2a9af3208cfa8464a8fdd5e3dd5ff406, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -756,9 +778,29 @@ SpriteRenderer:
   m_Size: {x: 5.9880238, y: 5.9880238}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &717384630
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717384626}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dee4abca5b2d4e54fa95ca25b52051ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &768181144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,8 +1229,8 @@ MonoBehaviour:
   animations:
   - animator: {fileID: 1734429246}
     animation: HeadDrop
-    threadAnimator: {fileID: 0}
-    threadAnimation: 
+    threadAnimator: {fileID: 717384630}
+    threadAnimation: HearBreak
   - animator: {fileID: 768181147}
     animation: LeftArmDrop
     threadAnimator: {fileID: 843370331}
@@ -1199,12 +1241,12 @@ MonoBehaviour:
     threadAnimation: ArmThreadMove
   - animator: {fileID: 610361509}
     animation: LeftLegDrop
-    threadAnimator: {fileID: 0}
-    threadAnimation: 
+    threadAnimator: {fileID: 1539422023}
+    threadAnimation: LegThreadDropLeft
   - animator: {fileID: 610361509}
     animation: LeftLegMove
     threadAnimator: {fileID: 1539422023}
-    threadAnimation: LegThreadMoveLeftIdle
+    threadAnimation: LegThreadMoveLeft
   - animator: {fileID: 65775868}
     animation: RightArmMove
     threadAnimator: {fileID: 165816627}
@@ -1215,12 +1257,12 @@ MonoBehaviour:
     threadAnimation: ArmThreadBreakRight
   - animator: {fileID: 1376984615}
     animation: RightLegMove
-    threadAnimator: {fileID: 0}
-    threadAnimation: 
+    threadAnimator: {fileID: 491451784}
+    threadAnimation: LegThreadMoveRight
   - animator: {fileID: 1376984615}
     animation: RightLegDrop
-    threadAnimator: {fileID: 0}
-    threadAnimation: 
+    threadAnimator: {fileID: 491451784}
+    threadAnimation: LegThreadBreakRight
 --- !u!1 &1376984612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,7 +1600,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.9880238, y: 5.9880238}
+  m_Size: {x: 5.9880238, y: 8.982036}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

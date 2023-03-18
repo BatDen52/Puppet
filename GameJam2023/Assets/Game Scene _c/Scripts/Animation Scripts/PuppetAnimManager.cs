@@ -26,11 +26,23 @@ public class PuppetAnimManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Q)) 
         {
-            SetAnim(4);
+            SetAnim(8);
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
-            SetAnim(5);
+            SetAnim(6);
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            SetAnim(3);
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            SetAnim(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
+            SetAnim(0);
         }
     }
 
