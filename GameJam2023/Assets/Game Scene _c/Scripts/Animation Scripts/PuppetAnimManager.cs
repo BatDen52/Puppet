@@ -14,6 +14,28 @@ public class PuppetAnimManager : MonoBehaviour
         public string threadAnimation;
     }
     [SerializeField] AnimData[] animations;
+    [SerializeField] AnimData[] breakAnimations;
+
+    private Score score;
+
+    private void Start()
+    {
+        score = FindObjectOfType<Score>();
+        score.Broken += SetBreakAnim;
+    }
+
+    private void SetBreakAnim(int count)
+    {
+        Debug.Log("Broken");
+        int index = UnityEngine.Random.Range(0, breakAnimations.Length - 1);
+        breakAnimations[index].threadAnimator.Play(breakAnimations[index].threadAnimation);
+        breakAnimations[index].animator.Play(breakAnimations[index].animation);
+        count--;
+        if(count<=0)
+        {
+            //GameOverSequence
+        }
+    }
 
     public void SetAnim(string key, bool Break)
     {
@@ -42,28 +64,5 @@ public class PuppetAnimManager : MonoBehaviour
         animations[index].animator.Play(animations[index].animation);
     }
 
-    private void Update()
-    {
-        /*if(Input.GetKeyDown(KeyCode.Q)) 
-        {
-            SetAnim(8);
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            SetAnim(6);
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            SetAnim(3);
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            SetAnim(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.T))
-        {
-            SetAnim(0);
-        }*/
-    }
 
 }
