@@ -29,9 +29,9 @@ public class MenuUIHendler : MonoBehaviour
         SongAarray.SetActive(true);
         Menu.SetActive(false);
 
-        songName.text = songList.songData[0].Name;
+        /*songName.text = songList.songData[0].Name;
         songLevel.text = songList.songData[0].Level;
-        preview.sprite = songList.songData[0].preview;
+        preview.sprite = songList.songData[0].preview;*/
         previewPlayer.Play();
     }
 

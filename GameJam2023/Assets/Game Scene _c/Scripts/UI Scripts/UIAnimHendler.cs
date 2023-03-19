@@ -19,7 +19,7 @@ public class UIAnimHendler : MonoBehaviour
     [SerializeField] List<SpriteRenderer> UIBack; 
     public void FinalAnim()
     {
-        StartCoroutine(LoadWinscreen());
+        StartCoroutine(LoadWinscreen(3.48f));
         anims[2].animator.enabled = true;
         foreach (UIAnim anim in anims) 
         {
@@ -31,11 +31,16 @@ public class UIAnimHendler : MonoBehaviour
         }
     }
 
+    public void WinSequence()
+    {
+        StartCoroutine(LoadWinscreen(0));
+    }
+
     [SerializeField] GameObject winscreen;
 
-    private IEnumerator LoadWinscreen()
+    private IEnumerator LoadWinscreen( float time)
     {
-        yield return new WaitForSeconds(3.48f);
+        yield return new WaitForSeconds(time);
         winscreen.SetActive(true);
         winscreen.transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(3f);

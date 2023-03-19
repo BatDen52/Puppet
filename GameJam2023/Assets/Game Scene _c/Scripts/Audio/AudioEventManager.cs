@@ -15,7 +15,7 @@ public class AudioEventManager : MonoBehaviour
     [SerializeField] private AudioClip[] _soundsMove;
 
     private Score _score;
-    private float _timeToRestart = 3;
+    private float _timeToRestart = 1.5f;
     private float _currentTime;
 
     private void Awake()
