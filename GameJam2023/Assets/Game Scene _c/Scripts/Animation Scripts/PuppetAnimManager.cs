@@ -15,7 +15,6 @@ public class PuppetAnimManager : MonoBehaviour
     }
     [SerializeField] AnimData[] animations;
 
-
     public void SetAnim(string key, bool Break)
     {
         int index = 0;

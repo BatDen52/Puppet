@@ -33,6 +33,11 @@ public class SongManager : MonoBehaviour
 
     private PuppetAnimManager animManager;
 
+    public int NotesCount => _notes.Count();
+
+    public event Action Fail;
+    public event Action Success;
+
     private void Start()
     {
         animManager = FindObjectOfType<PuppetAnimManager>();
@@ -96,6 +101,7 @@ public class SongManager : MonoBehaviour
                     Destroy(note.gameObject);
 
                 _noteRows.Remove(bit);
+                Fail?.Invoke();
             }
         }
     }
@@ -110,12 +116,11 @@ public class SongManager : MonoBehaviour
                 {
                     animManager.SetAnim(note.key, false);
                     Destroy(note.gameObject);
-                    
                 }
 
                 _noteRows.Remove(bit);
 
-                Debug.Log("AllHit");
+                Success?.Invoke();
             }
         }
     }
