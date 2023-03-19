@@ -67,6 +67,7 @@ public class SongManager : MonoBehaviour
         if (songToPlay.isPlaying == false)
         {
             animHendler.WinSequence();
+            _score.Win();
             _isEndGame = true;
         }
 

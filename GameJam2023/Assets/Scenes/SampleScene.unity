@@ -1238,6 +1238,10 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 2978538214862122184, guid: 968f7e26e392623498c0ededb42d9a0f, type: 3}
+      propertyPath: _soundWin
+      value: 
+      objectReference: {fileID: 8300000, guid: 581109ff261085642826d8dbd34ea609, type: 3}
+    - target: {fileID: 2978538214862122184, guid: 968f7e26e392623498c0ededb42d9a0f, type: 3}
       propertyPath: _sourceMusic
       value: 
       objectReference: {fileID: 2079106508}
@@ -1287,6 +1291,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4484935635236243962, guid: 968f7e26e392623498c0ededb42d9a0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933525517982172193, guid: 968f7e26e392623498c0ededb42d9a0f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933525517982172193, guid: 968f7e26e392623498c0ededb42d9a0f, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
