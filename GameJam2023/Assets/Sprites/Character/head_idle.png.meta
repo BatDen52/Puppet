@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8eceab78011cc5843a49dac9b8325e72
+guid: f7d6fb5649718704cb3b491cc733af8c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,12 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: head (2)_0
+      name: head_idle_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 11
-        width: 29
+        x: 1
+        y: 4
+        width: 31
         height: 27
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -143,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2190dae2490abe845bf52fff04b28523
-      internalID: -1597347721
+      spriteID: 640565c67bc8f374e822662efdb1b903
+      internalID: 2038109616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: head (2)_1
+      name: head_idle_1
       rect:
         serializedVersion: 2
-        x: 59
-        y: 10
-        width: 29
+        x: 33
+        y: 4
+        width: 31
         height: 25
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa484ba970aedbe47990fef2c758bce9
-      internalID: 1095975554
+      spriteID: 7bd6d90d49c07904fa12e2f115c4f1b0
+      internalID: 1910682781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: head (2)_2
+      name: head_idle_2
       rect:
         serializedVersion: 2
-        x: 107
-        y: 9
-        width: 29
+        x: 65
+        y: 4
+        width: 31
         height: 25
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cee6f73720a98cb4fbebdb713ff18575
-      internalID: 1805264374
+      spriteID: df32560c7c768a24e8b49b6d05807f5f
+      internalID: 2030540984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: head (2)_3
+      name: head_idle_3
       rect:
         serializedVersion: 2
-        x: 155
-        y: 6
-        width: 29
-        height: 25
+        x: 97
+        y: 3
+        width: 31
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98770b9c8e632914aba176479fb29bf7
-      internalID: -1392577634
+      spriteID: e89fe815af424484c85605385d41cfd1
+      internalID: 286576197
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      head (2)_0: -1597347721
-      head (2)_2: 1805264374
-      head (2)_1: 1095975554
-      head (2)_3: -1392577634
+      head_idle_3: 286576197
+      head_idle_2: 2030540984
+      head_idle_1: 1910682781
+      head_idle_0: 2038109616
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
