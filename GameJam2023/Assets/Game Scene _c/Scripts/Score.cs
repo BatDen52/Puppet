@@ -15,6 +15,7 @@ public class Score : MonoBehaviour
     public int NoteScore { get; private set; }
     public int FailScore { get; private set; }
     public int BrokeScore { get; private set; }
+    public int TotalScore { get; private set; }
     public static List<string> BrokenStrings { get; private set; } = new List<string>();
 
     public event Action EndGame;
@@ -43,6 +44,7 @@ public class Score : MonoBehaviour
     {
         SuccessScore++;
         NoteScore++;
+        TotalScore += 1 * (BrokenStrings.Count + 1);
 
         Success?.Invoke(SuccessScore);
     }
