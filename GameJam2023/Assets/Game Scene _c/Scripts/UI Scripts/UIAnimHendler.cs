@@ -15,12 +15,28 @@ public class UIAnimHendler : MonoBehaviour
 
 
     public UIAnim[] anims;
+    [SerializeField] List<SpriteRenderer> UIBack; 
     public void FinalAnim()
     {
         anims[2].animator.enabled = true;
         foreach (UIAnim anim in anims) 
         {
             anim.animator.Play(anim.animation);
+        }
+        foreach(var i in UIBack)
+        {
+            StartCoroutine(UIFade(i));
+        }
+    }
+
+    private IEnumerator UIFade(SpriteRenderer img)
+    {
+        float alpha = 1f;
+        while(alpha> 0f) 
+        {
+            alpha -= .1f;
+            img.color = new Color(img.color.r, img.color.g, img.color.b, alpha);
+            yield return new WaitForSeconds(.1f);
         }
     }
 
