@@ -22,26 +22,31 @@ public class PuppetAnimManager : MonoBehaviour
     private Score score;
     private int[] breakOrder = new int[4] { 0, 1, 2, 3 };
     private int currentIndex = 0;
+    UIAnimHendler uiAnim;
     private void Start()
     {
         score = FindObjectOfType<Score>();
         score.Broken += SetBreakAnim;
         System.Random random = new System.Random();
         breakOrder = breakOrder.OrderBy(x => random.Next()).ToArray();
+        uiAnim = FindObjectOfType<UIAnimHendler>();
     }
 
     private void SetBreakAnim(int count)
     {
-        Debug.Log("Broken");
+        uiAnim.UpdateUI();
         int index = currentIndex;
         breakAnimations[index].threadAnimator.Play(breakAnimations[index].threadAnimation);
         breakAnimations[index].animator.Play(breakAnimations[index].animation);
-        animations[index].broken = true;
-        count++;
-        currentIndex++;
-        if(count==6)
+        if(count==4)
         {
-            Debug.Log("GameOverSequence");
+            uiAnim.FinalAnim();
+        }
+        else
+        {
+            animations[index].broken = true;
+            count++;
+            currentIndex++;
         }
     }
 
