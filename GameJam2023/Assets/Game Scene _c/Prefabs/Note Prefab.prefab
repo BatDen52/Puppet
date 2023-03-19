@@ -68,13 +68,13 @@ MonoBehaviour:
   - {fileID: 1670199171276766311, guid: 16a1a5838b5d24a4796fcf24abe05765, type: 3}
   colors:
   - serializedVersion: 2
-    rgba: 4278239456
+    rgba: 4291814143
   - serializedVersion: 2
-    rgba: 4278190575
+    rgba: 4278810281
   - serializedVersion: 2
-    rgba: 4282372402
+    rgba: 4281950152
   - serializedVersion: 2
-    rgba: 4290786339
+    rgba: 4286341676
   speed: 4
 --- !u!61 &-4601349614587161309
 BoxCollider2D:

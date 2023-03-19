@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UIAnimHendler : MonoBehaviour
 {
+
     [System.Serializable]
     public struct UIAnim
     {
@@ -18,6 +19,7 @@ public class UIAnimHendler : MonoBehaviour
     [SerializeField] List<SpriteRenderer> UIBack; 
     public void FinalAnim()
     {
+        StartCoroutine(LoadWinscreen());
         anims[2].animator.enabled = true;
         foreach (UIAnim anim in anims) 
         {
@@ -27,6 +29,17 @@ public class UIAnimHendler : MonoBehaviour
         {
             StartCoroutine(UIFade(i));
         }
+    }
+
+    [SerializeField] GameObject winscreen;
+
+    private IEnumerator LoadWinscreen()
+    {
+        yield return new WaitForSeconds(3.48f);
+        winscreen.SetActive(true);
+        winscreen.transform.GetChild(0).gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        winscreen.transform.GetChild(1).gameObject.SetActive(true);
     }
 
     private IEnumerator UIFade(SpriteRenderer img)
@@ -52,5 +65,7 @@ public class UIAnimHendler : MonoBehaviour
         }
 
     }
+
+
 
 }
