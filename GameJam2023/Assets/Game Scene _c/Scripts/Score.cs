@@ -28,6 +28,7 @@ public class Score : MonoBehaviour
         _songManager = FindObjectOfType<SongManager>();
         _songManager.Fail += OnFail;
         _songManager.Success += OnSuccess;
+        BrokenStrings.Clear();
     }
 
     public float GetProgressScore()
