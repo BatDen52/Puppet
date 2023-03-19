@@ -118,9 +118,10 @@ public class Note : MonoBehaviour
     {
         if (collision.tag == "bit_trigger")
         {
+            if(isActive==false)
+                Missed?.Invoke(bit);
             isActive = false;
             inTriggerArea = false;
-            Missed?.Invoke(bit);
         }
     }
 
