@@ -3,54 +3,54 @@
     [
         {
             "Bit": 4.7,
-            "Keys":["w"]
+            "Keys":["w|o"]
         },
         {
             "Bit": 5.9,
-            "Keys":["w", "e"]
+            "Keys":["w|o", "e|i"]
         },
         {
             "Bit": 7.1,
-            "Keys":["q"]
+            "Keys":["q|p"]
 
         },
         {
             "Bit": 14.3,
-            "Keys":["q","r"]
+            "Keys":["q|p","r|u"]
         },
         {
             "Bit": 15.4,
-            "Keys":["r"]
+            "Keys":["r|u"]
         },
         {
             "Bit": 16.6,
-            "Keys":["e"]
+            "Keys":["e|i"]
 
         },
         {
             "Bit": 25.2,
-            "Keys":["q","w","e","r"]
+            "Keys":["q|p","w|o","e|i","r|u"]
         },
         {
             "Bit": 26.4,
-            "Keys":["q","w","e","r"]
+            "Keys":["q|p","w|o","e|i","r|u"]
         },
         {
             "Bit": 27.6,
-            "Keys":["q","w","e","r"]
+            "Keys":["q|p","w|o","e|i","r|u"]
         },
         {
             "Bit": 33.6,
-            "Keys":["q","w","e","r"]
+            "Keys":["q|p","w|o","e|i","r|u"]
 
         },
         {
             "Bit": 34.8,
-            "Keys":["q","w","e","r"]
+            "Keys":["q|p","w|o","e|i","r|u"]
         },
         {
             "Bit": 36.0,
-            "Keys":["q","w","e","r"]
+            "Keys":["q|p","w|o","e|i","r|u"]
         },
         {
             "Bit": 37.2,

@@ -28,7 +28,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.80555}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1560396312450773849}
   m_Father: {fileID: 0}
@@ -62,6 +61,10 @@ MonoBehaviour:
   - {fileID: -8802306285804163778, guid: 16a1a5838b5d24a4796fcf24abe05765, type: 3}
   - {fileID: 8619292566291306626, guid: 16a1a5838b5d24a4796fcf24abe05765, type: 3}
   - {fileID: -7527278747769256953, guid: 16a1a5838b5d24a4796fcf24abe05765, type: 3}
+  - {fileID: -2985880806443862060, guid: 16a1a5838b5d24a4796fcf24abe05765, type: 3}
+  - {fileID: -8000513460192240159, guid: 16a1a5838b5d24a4796fcf24abe05765, type: 3}
+  - {fileID: 5775033729251816657, guid: 16a1a5838b5d24a4796fcf24abe05765, type: 3}
+  - {fileID: 1670199171276766311, guid: 16a1a5838b5d24a4796fcf24abe05765, type: 3}
   colors:
   - serializedVersion: 2
     rgba: 4278239456
@@ -126,7 +129,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1560396312450773849}
   m_RootOrder: 0
@@ -202,7 +204,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6836726860160400923}
   m_Father: {fileID: 5084035851163458814}
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1032570511, guid: 5898dfaafb527ef408872fa5ca4001a8, type: 3}
+  m_Sprite: {fileID: -3929920448168720484, guid: 5898dfaafb527ef408872fa5ca4001a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

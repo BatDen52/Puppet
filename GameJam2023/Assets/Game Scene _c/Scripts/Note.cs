@@ -81,25 +81,34 @@ public class Note : MonoBehaviour
         switch (key)
         {
             case "q":
-            case "p":
                 k = 0;
                 break;
             case "w":
-            case "o":
                 k = 1;
                 break;
             case "e":
-            case "i":
                 k = 2;
                 break;
             case "r":
-            case "u":
                 k = 3;
+                break;
+            case "p":
+                k = 4;
+                break;
+            case "o":
+                k = 5;
+                break;
+            case "i":
+                k = 6;
+                break;
+            case "u":
+                k = 7;
                 break;
         }
 
-        backgroundImage.color = colors[k];
         keyImage.sprite = keys[k];
+        k %= 4;
+        backgroundImage.color = colors[k];
 
         GetComponent<RectTransform>().localPosition = new Vector3(GetComponent<RectTransform>().localPosition.x,
                     GetComponent<RectTransform>().localPosition.y - k * 50f, 0);
@@ -118,7 +127,7 @@ public class Note : MonoBehaviour
     {
         if (collision.tag == "bit_trigger")
         {
-            if(isActive==false)
+            if (isActive == false)
                 Missed?.Invoke(bit);
             isActive = false;
             inTriggerArea = false;

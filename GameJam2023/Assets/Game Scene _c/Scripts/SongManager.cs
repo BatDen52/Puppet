@@ -59,7 +59,10 @@ public class SongManager : MonoBehaviour
         if (nextNoteIndex < _notes.Length && _notes[nextNoteIndex].Bit < currentPos + beatsShownInAdvance)
         {
             foreach (string key in _notes[nextNoteIndex].Keys)
-                SpawnNote(key, _notes[nextNoteIndex].Bit);
+            {
+                string[] keys = key.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                SpawnNote(keys[UnityEngine.Random.Range(0, keys.Length)], _notes[nextNoteIndex].Bit);
+            }
 
             nextNoteIndex++;
         }
@@ -81,7 +84,7 @@ public class SongManager : MonoBehaviour
         newNote.Missed += OnMissed;
         newNote.Hiting += OnHit;
 
-        newNote.speed = speed; 
+        newNote.speed = speed;
 
         if (_noteRows.Count == 0 || _noteRows.ContainsKey(bit) == false)
         {
