@@ -114,7 +114,7 @@ public class SongManager : MonoBehaviour
             {
                 foreach (var note in _noteRows[bit])
                 {
-                    animManager.SetAnim(note.key, false);
+                    //animManager.SetAnim(note.key, false);
                     Destroy(note.gameObject);
                 }
 
