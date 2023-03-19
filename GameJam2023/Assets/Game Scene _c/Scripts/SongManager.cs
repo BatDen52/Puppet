@@ -16,6 +16,7 @@ public class SongManager : MonoBehaviour
     }
 
     public AudioSource songToPlay;
+    public AudioSource silentSongToPlay;
     public float beatsShownInAdvance;
     public float bpm; //ударов в минуту
     public int nextNoteIndex = 0;
@@ -43,6 +44,7 @@ public class SongManager : MonoBehaviour
         animManager = FindObjectOfType<PuppetAnimManager>();
         dpsTimePlayed = AudioSettings.dspTime;
         songToPlay.Play();
+        silentSongToPlay.Play();
         _noteRows.Clear();
         _notes = JsonLoader.GetNotes().ToArray();
 

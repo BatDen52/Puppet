@@ -7,12 +7,16 @@ public class AudioEventManager : MonoBehaviour
     [SerializeField] private AudioSource _sourceFail;
     [SerializeField] private AudioSource _sourceBroken;
     [SerializeField] private AudioSource _sourceSuccess;
+    [SerializeField] private AudioSource _sourceMusic;
+    [SerializeField] private AudioSource _sourceSilentMusic;
     [SerializeField] private AudioClip[] _soundsFail;
     [SerializeField] private AudioClip[] _soundsBroken;
     [SerializeField] private AudioClip[] _soundsSuccess;
     [SerializeField] private AudioClip[] _soundsMove;
 
     private Score _score;
+    private float _timeToRestart = 3;
+    private float _currentTime;
 
     private void Awake()
     {
@@ -21,6 +25,17 @@ public class AudioEventManager : MonoBehaviour
         _score.Broken += OnBroken;
         _score.Success += OnSuccess;
         _score.Success += OnMove;
+    }
+
+    private void Update()
+    {
+        if(_currentTime > 0)
+        {
+            _currentTime -= Time.deltaTime;
+
+            if (_currentTime <= 0)
+                _sourceMusic.mute = false;
+        }
     }
 
     public void PlayInFail(AudioClip clip)
@@ -42,6 +57,9 @@ public class AudioEventManager : MonoBehaviour
     {
         if (_soundsFail.Length > 0)
             PlayInFail(_soundsFail[Random.Range(0, _soundsFail.Length)]);
+
+        _sourceMusic.mute = true;
+        _currentTime = _timeToRestart;
     }
 
     private void OnBroken(int brokenScore)
