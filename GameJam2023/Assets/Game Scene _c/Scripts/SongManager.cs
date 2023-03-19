@@ -61,6 +61,12 @@ public class SongManager : MonoBehaviour
 
     private void Update()
     {
+        if (songToPlay.isPlaying == false)
+        {
+            Debug.Log("Win");
+            _isEndGame = true;
+        }
+
         if (_isEndGame)
             return;
 
