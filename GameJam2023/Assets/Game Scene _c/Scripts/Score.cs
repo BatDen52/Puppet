@@ -72,8 +72,8 @@ public class Score : MonoBehaviour
                     _strings.Remove(brokenString);
                 }
 
-                Broken?.Invoke(BrokeScore);
             }
+            Broken?.Invoke(BrokeScore);
         }
     }
 }

@@ -29,7 +29,7 @@ public class UIAnimHendler : MonoBehaviour
     private int count = 0;
     public void UpdateUI()
     {
-        if(count<=sheetSprites.Count)
+        if(count<sheetSprites.Count)
         {
             sheetSprite.sprite = sheetSprites[count];
             count++;

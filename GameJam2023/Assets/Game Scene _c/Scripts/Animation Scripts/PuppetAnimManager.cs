@@ -38,7 +38,7 @@ public class PuppetAnimManager : MonoBehaviour
         int index = currentIndex;
         breakAnimations[index].threadAnimator.Play(breakAnimations[index].threadAnimation);
         breakAnimations[index].animator.Play(breakAnimations[index].animation);
-        if(count==4)
+        if(count==5)
         {
             uiAnim.FinalAnim();
         }
