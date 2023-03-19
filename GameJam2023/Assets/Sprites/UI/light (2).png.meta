@@ -137,14 +137,14 @@ TextureImporter:
         width: 149
         height: 137
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bdea9d5a81efa841a83ad0c2c242014
-      internalID: -247619240
+      spriteID: a05ad360d0c7e494f9b0588cf9e1785d
+      internalID: -2105096653
       vertices: []
       indices: 
       edges: []
@@ -158,14 +158,14 @@ TextureImporter:
         width: 131
         height: 137
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e00bdaaab180274ca8698198ef061f6
-      internalID: -1531720370
+      spriteID: fb5571a8456ab7c45ab3b2802bdeb6fd
+      internalID: 1533546036
       vertices: []
       indices: 
       edges: []
@@ -179,14 +179,14 @@ TextureImporter:
         width: 105
         height: 137
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac771dae577c845499a0ef3229203e7d
-      internalID: 419545400
+      spriteID: e7a757d989166964ab63d32aa1f223cb
+      internalID: 474227382
       vertices: []
       indices: 
       edges: []
@@ -199,15 +199,15 @@ TextureImporter:
         y: 0
         width: 62
         height: 137
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 399a49cf70c9d4e48bac2eb781129e6f
-      internalID: -1974399504
+      spriteID: 22f713c31d77c124782ba3283774a8c1
+      internalID: -1809237189
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      light (2)_2: 419545400
-      light (2)_3: -1974399504
-      light (2)_1: -1531720370
-      light (2)_0: -247619240
+      light (2)_2: 474227382
+      light (2)_3: -1809237189
+      light (2)_1: 1533546036
+      light (2)_0: -2105096653
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
