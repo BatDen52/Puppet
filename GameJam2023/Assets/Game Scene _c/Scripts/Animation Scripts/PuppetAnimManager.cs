@@ -22,7 +22,7 @@ public class PuppetAnimManager : MonoBehaviour
     private Score score;
     private int[] breakOrder = new int[4] { 0, 1, 2, 3 };
     private int currentIndex = 0;
-    UIAnimHendler uiAnim;
+    private UIAnimHendler uiAnim;
     private void Start()
     {
         score = FindObjectOfType<Score>();

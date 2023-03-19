@@ -32,7 +32,7 @@ public class MenuUIHendler : MonoBehaviour
         /*songName.text = songList.songData[0].Name;
         songLevel.text = songList.songData[0].Level;
         preview.sprite = songList.songData[0].preview;*/
-        previewPlayer.Play();
+        //previewPlayer.Play();
     }
 
     public void ShowNextSong()

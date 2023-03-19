@@ -34,12 +34,12 @@ public class Score : MonoBehaviour
 
     public float GetProgressScore()
     {
-        return _songManager.NotesCount / NoteScore * 100;
+        return (float)NoteScore / _songManager.NotesCount * 100;
     }
 
     public float GetPerfectScore()
     {
-        return _songManager.NotesCount / SuccessScore * 100;
+        return (float)SuccessScore / _songManager.NotesCount * 100;
     }
 
     private void OnSuccess()

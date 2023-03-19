@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class UIAnimHendler : MonoBehaviour
 {
 
@@ -14,6 +15,8 @@ public class UIAnimHendler : MonoBehaviour
         public string animation;
     }
 
+    [SerializeField] AudioSource sourceLose;
+    [SerializeField] AudioClip sample;
 
     public UIAnim[] anims;
     [SerializeField] List<SpriteRenderer> UIBack; 
@@ -29,7 +32,10 @@ public class UIAnimHendler : MonoBehaviour
         {
             StartCoroutine(UIFade(i));
         }
+        sourceLose.PlayOneShot(sample);
     }
+
+    
 
     public void WinSequence()
     {

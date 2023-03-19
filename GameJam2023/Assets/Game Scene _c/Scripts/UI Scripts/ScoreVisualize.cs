@@ -22,12 +22,12 @@ public class ScoreVisualize : MonoBehaviour
 
     private void OnSuccess(int successScore)
     {
-        _hudScore.text = successScore.ToString();
+        _hudScore.text = (_score.TotalScore * 10).ToString("0");
     }
 
     private void OnEndGame()
     {
         _textTotalScore.text = _score.TotalScore.ToString();
-        _textProgressScore.text = _score.GetProgressScore().ToString();
+        _textProgressScore.text = _score.GetProgressScore().ToString() + "%";
     }
 }
