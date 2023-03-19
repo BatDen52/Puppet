@@ -29,6 +29,8 @@ public class SongManager : MonoBehaviour
     private double dpsTimePlayed; //прошло времени с начала композиции
     private NoteItem[] _notes;
     private Dictionary<float, List<Note>> _noteRows = new Dictionary<float, List<Note>>();
+    private Score _score;
+    private bool _isEndGame;
 
     public static float curretnBit = -1;
 
@@ -50,17 +52,23 @@ public class SongManager : MonoBehaviour
 
         targetPos = GameObject.FindGameObjectWithTag("bit_trigger").GetComponent<Transform>();
         speed = beatsShownInAdvance;
+
+        _score = FindObjectOfType<Score>();
+        _score.EndGame += OnEndGame;
     }
 
     private void Update()
     {
+        if (_isEndGame)
+            return;
+
         currentPos = AudioSettings.dspTime - dpsTimePlayed;
 
         if (nextNoteIndex < _notes.Length && _notes[nextNoteIndex].Bit < currentPos + beatsShownInAdvance)
         {
             foreach (string key in _notes[nextNoteIndex].Keys)
             {
-                SpawnNote( key, _notes[nextNoteIndex].Bit);
+                SpawnNote(key, _notes[nextNoteIndex].Bit);
             }
 
             nextNoteIndex++;
@@ -127,5 +135,16 @@ public class SongManager : MonoBehaviour
                 Success?.Invoke();
             }
         }
+    }
+
+    private void OnEndGame()
+    {
+        _isEndGame = true;
+
+        foreach (var noteRow in _noteRows)
+            foreach (var note in noteRow.Value)
+                Destroy(note.gameObject);
+
+        _noteRows.Clear();
     }
 }
