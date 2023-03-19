@@ -68,7 +68,7 @@ public class Score : MonoBehaviour
             {
                 if (_strings.Count > 0)
                 {
-                    string brokenString = _strings[UnityEngine.Random.Range(0, _strings.Count)];
+                    string brokenString = _strings[0];
 
                     BrokenStrings.Add(brokenString);
                     _strings.Remove(brokenString);
