@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class SongManager : MonoBehaviour
 {
+    public List<string> AllKeys = new List<string> { "q", "w", "e", "r", "p", "o", "i", "u" };
+
     private enum NoteStats
     {
         PERFECT,
@@ -122,7 +124,8 @@ public class SongManager : MonoBehaviour
     {
         if (_noteRows.Count > 0)
         {
-            if (_noteRows[bit].All(i => i.isActive))
+            if (_noteRows[bit].All(i => i.isActive) 
+                && AllKeys.Except(_noteRows[bit].Select(i => i.key)).All(i => Input.GetKeyDown(i) == false))
             {
                 foreach (var note in _noteRows[bit])
                 {
