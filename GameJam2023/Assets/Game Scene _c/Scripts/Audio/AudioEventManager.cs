@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,9 +14,10 @@ public class AudioEventManager : MonoBehaviour
     [SerializeField] private AudioClip[] _soundsBroken;
     [SerializeField] private AudioClip[] _soundsSuccess;
     [SerializeField] private AudioClip[] _soundsMove;
+    [SerializeField] private AudioClip _soundWin;
 
     private Score _score;
-    private float _timeToRestart = 3;
+    private float _timeToRestart = 1.5f;
     private float _currentTime;
 
     private void Awake()
@@ -25,6 +27,7 @@ public class AudioEventManager : MonoBehaviour
         _score.Broken += OnBroken;
         _score.Success += OnSuccess;
         _score.Success += OnMove;
+        _score.GameWin += OnWin;
     }
 
     private void Update()
@@ -36,6 +39,11 @@ public class AudioEventManager : MonoBehaviour
             if (_currentTime <= 0)
                 _sourceMusic.mute = false;
         }
+    }
+
+    public void OnWin()
+    {
+        _sourceSuccess.PlayOneShot(_soundWin);
     }
 
     public void PlayInFail(AudioClip clip)
@@ -56,7 +64,7 @@ public class AudioEventManager : MonoBehaviour
     private void OnFail(int failScore)
     {
         if (_soundsFail.Length > 0)
-            PlayInFail(_soundsFail[Random.Range(0, _soundsFail.Length)]);
+            PlayInFail(_soundsFail[UnityEngine.Random.Range(0, _soundsFail.Length)]);
 
         _sourceMusic.mute = true;
         _currentTime = _timeToRestart;
@@ -65,18 +73,18 @@ public class AudioEventManager : MonoBehaviour
     private void OnBroken(int brokenScore)
     {
         if (_soundsBroken.Length > 0)
-            PlayInBroken(_soundsBroken[Random.Range(0, _soundsBroken.Length)]);
+            PlayInBroken(_soundsBroken[UnityEngine.Random.Range(0, _soundsBroken.Length)]);
     }
 
     private void OnSuccess(int successScore)
     {
         if (_soundsSuccess.Length > 0)
-            PlayInSuccess(_soundsSuccess[Random.Range(0, _soundsSuccess.Length)]);
+            PlayInSuccess(_soundsSuccess[UnityEngine.Random.Range(0, _soundsSuccess.Length)]);
     }
 
     private void OnMove(int score)
     {
         if (_soundsMove.Length > 0)
-            PlayInSuccess(_soundsMove[Random.Range(0, _soundsMove.Length)]);
+            PlayInSuccess(_soundsMove[UnityEngine.Random.Range(0, _soundsMove.Length)]);
     }
 }

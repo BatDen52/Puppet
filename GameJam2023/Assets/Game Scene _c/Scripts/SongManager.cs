@@ -43,9 +43,12 @@ public class SongManager : MonoBehaviour
     public event Action Fail;
     public event Action Success;
 
+    private UIAnimHendler animHendler;
+
     private void Start()
     {
         animManager = FindObjectOfType<PuppetAnimManager>();
+        animHendler = FindObjectOfType<UIAnimHendler>();
         dpsTimePlayed = AudioSettings.dspTime;
         songToPlay.Play();
         silentSongToPlay.Play();
@@ -63,7 +66,8 @@ public class SongManager : MonoBehaviour
     {
         if (songToPlay.isPlaying == false)
         {
-            Debug.Log("Win");
+            animHendler.WinSequence();
+            _score.Win();
             _isEndGame = true;
         }
 

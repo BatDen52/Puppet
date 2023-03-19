@@ -22,6 +22,7 @@ public class Score : MonoBehaviour
     public event Action<int> Success;
     public event Action<int> Fail;
     public event Action<int> Broken;
+    public event Action GameWin;
 
     private void Awake()
     {
@@ -45,9 +46,14 @@ public class Score : MonoBehaviour
     {
         SuccessScore++;
         NoteScore++;
-        TotalScore += 1 * (BrokenStrings.Count + 1);
+        TotalScore += BrokenStrings.Count + 1;
 
         Success?.Invoke(SuccessScore);
+    }
+
+    public void Win()
+    {
+        GameWin?.Invoke();
     }
 
     private void OnFail()
