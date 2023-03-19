@@ -99,9 +99,25 @@ public class Note : MonoBehaviour
         GetComponent<RectTransform>().localPosition = new Vector3(GetComponent<RectTransform>().localPosition.x,
                     GetComponent<RectTransform>().localPosition.y - k * 50f, 0);
 
-        if(Score.BrokenStrings.Contains(key))
+        if(Score.BrokenStrings.Contains(key) && UnityEngine.Random.Range(0, 2) == 1)
         {
-            k += 4 * UnityEngine.Random.Range(0, 2);
+            k += 4;
+            
+            switch (key)
+            {
+                case "q":
+                    key = "p";
+                    break;
+                case "w":
+                    key = "o";
+                    break;
+                case "e":
+                    key = "i";
+                    break;
+                case "r":
+                    key = "u";
+                    break;
+            }
         }
 
         keyImage.sprite = keys[k];
