@@ -9,11 +9,13 @@ public class Score : MonoBehaviour
     [SerializeField] private int _maxBrokenCount = 5;
 
     private SongManager _songManager;
+    private List<string> _strings = new List<string> { "q", "w", "e", "r" };
 
     public int SuccessScore { get; private set; }
     public int NoteScore { get; private set; }
     public int FailScore { get; private set; }
     public int BrokeScore { get; private set; }
+    public static List<string> BrokenStrings { get; private set; } = new List<string>();
 
     public event Action EndGame;
     public event Action<int> Success;
@@ -57,9 +59,21 @@ public class Score : MonoBehaviour
             BrokeScore++;
 
             if (BrokeScore == _maxBrokenCount)
+            {
                 EndGame?.Invoke();
+            }
             else
+            {
+                if (_strings.Count > 0)
+                {
+                    string brokenString = _strings[UnityEngine.Random.Range(0, _strings.Count)];
+
+                    BrokenStrings.Add(brokenString);
+                    _strings.Remove(brokenString);
+                }
+
                 Broken?.Invoke(BrokeScore);
+            }
         }
     }
 }

@@ -92,27 +92,19 @@ public class Note : MonoBehaviour
             case "r":
                 k = 3;
                 break;
-            case "p":
-                k = 4;
-                break;
-            case "o":
-                k = 5;
-                break;
-            case "i":
-                k = 6;
-                break;
-            case "u":
-                k = 7;
-                break;
         }
 
-        keyImage.sprite = keys[k];
-        k %= 4;
         backgroundImage.color = colors[k];
 
         GetComponent<RectTransform>().localPosition = new Vector3(GetComponent<RectTransform>().localPosition.x,
                     GetComponent<RectTransform>().localPosition.y - k * 50f, 0);
-        //speed = (transform.position.x - targetPos.position.x) / (8 * (60f / 126)) / 60;
+
+        if(Score.BrokenStrings.Contains(key))
+        {
+            k += 4 * UnityEngine.Random.Range(0, 2);
+        }
+
+        keyImage.sprite = keys[k];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

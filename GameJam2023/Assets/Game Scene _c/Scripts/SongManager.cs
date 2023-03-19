@@ -60,8 +60,7 @@ public class SongManager : MonoBehaviour
         {
             foreach (string key in _notes[nextNoteIndex].Keys)
             {
-                string[] keys = key.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-                SpawnNote(keys[UnityEngine.Random.Range(0, keys.Length)], _notes[nextNoteIndex].Bit);
+                SpawnNote( key, _notes[nextNoteIndex].Bit);
             }
 
             nextNoteIndex++;
