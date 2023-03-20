@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class UIAnimHendler : MonoBehaviour
@@ -19,10 +20,12 @@ public class UIAnimHendler : MonoBehaviour
     [SerializeField] AudioClip sample;
 
     public UIAnim[] anims;
+    [SerializeField] PuppetAnimManager.AnimData board;
     [SerializeField] List<SpriteRenderer> UIBack; 
     public void FinalAnim()
     {
         StartCoroutine(LoadWinscreen(3.48f));
+        board.animator.Play(board.animation);
         anims[2].animator.enabled = true;
         foreach (UIAnim anim in anims) 
         {

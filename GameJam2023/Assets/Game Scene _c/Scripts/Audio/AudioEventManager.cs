@@ -28,6 +28,7 @@ public class AudioEventManager : MonoBehaviour
         _score.Success += OnSuccess;
         _score.Success += OnMove;
         _score.GameWin += OnWin;
+        _score.EndGame += OnLose;
     }
 
     private void Update()
@@ -36,14 +37,21 @@ public class AudioEventManager : MonoBehaviour
         {
             _currentTime -= Time.deltaTime;
 
-            if (_currentTime <= 0)
+            if (_currentTime <= 0  && _currentTime>-10000)
                 _sourceMusic.mute = false;
         }
     }
 
+    public void OnLose()
+    {
+        _currentTime = -2000;
+        _sourceSilentMusic.mute = true;
+        _sourceMusic.mute = true;
+    }
+
     public void OnWin()
     {
-        _sourceSuccess.PlayOneShot(_soundWin);
+        //_sourceSuccess.PlayOneShot(_soundWin);
     }
 
     public void PlayInFail(AudioClip clip)

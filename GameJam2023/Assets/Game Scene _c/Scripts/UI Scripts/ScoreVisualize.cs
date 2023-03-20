@@ -27,7 +27,7 @@ public class ScoreVisualize : MonoBehaviour
 
     private void OnEndGame()
     {
-        _textTotalScore.text = _score.TotalScore.ToString();
-        _textProgressScore.text = _score.GetProgressScore().ToString() + "%";
+        _textTotalScore.text = (_score.TotalScore * 10).ToString("0");
+        _textProgressScore.text = _score.GetProgressScore().ToString("0.00") + "%";
     }
 }
